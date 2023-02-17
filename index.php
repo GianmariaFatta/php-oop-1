@@ -27,10 +27,10 @@ $harry_potter= new Movie('Harry Potter', 'Fantasy', 'Italiano', 'Lorem, ipsum do
 
 $movie_objects = [];
 
-foreach($movies as $movie){
+foreach($movie_objects as $movie){
     $movie_objects = new Movie($movie['title'],$movie['genre'],$movie['language'],$movie['overview']);
     $movie_objects[]= $movie_objects;
-}
+};
 
 
 ?>
