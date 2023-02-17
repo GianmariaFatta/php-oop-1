@@ -14,6 +14,10 @@ class Movie{
         $this->language=$_language;
         $this->overview=$_overview;
     }
+
+    public function goodVision(){
+        echo "Buona visione con " . $this->title;
+    }
 };
 
 
@@ -49,12 +53,15 @@ foreach($movie_objects as $movie){
     <li><?= $il_signore_degli_anelli->language?></li>
     <li><?= $il_signore_degli_anelli->overview?></li>
     </ul>
+    <p><i><?=$il_signore_degli_anelli->goodVision()?><i></p>
    <ul>
     <li> <?= $harry_potter->title?></li>
     <li><?= $harry_potter->genre?></li>
     <li><?= $harry_potter->language?></li>
     <li><?= $harry_potter->overview?></li>
-    </ul>
+</ul>
+
+<p><i><?=$harry_potter->goodVision()?><i></p>
     
 </body>
 </html>
