@@ -66,13 +66,13 @@ $harry_potter = new Movie(
 
 
 
-$movie_objects = [];
+$movie_objects = [$il_signore_degli_anelli, $harry_potter];
 
-foreach ($movie_objects as $movie) {
-    $movie_objects = new Movie($movie['title'], $movie['genre'], $movie['language'], $movie['overview']);
-    $movie_objects[] = $movie_objects;
-}
-;
+// foreach ($movie_objects as $movie) {
+//     $movie_objects = new Movie($movie['title'], $movie['genre'], $movie['language'], $movie['overview']);
+//     $movie_objects[] = $movie_objects;
+// }
+
 
 
 ?>
@@ -91,39 +91,24 @@ foreach ($movie_objects as $movie) {
 <body data-bs-theme="dark">
     <div class="container">
         <h1 class='text-center'>Movies</h1>
-        <ul>
-            <li>
-                <?= $il_signore_degli_anelli->title ?>
-            </li>
-            <li>
-                <?= $il_signore_degli_anelli->getFullGenre() ?>
-            </li>
-            <li>
-                <?= $il_signore_degli_anelli->language ?>
-            </li>
-            <li>
-                <?= $il_signore_degli_anelli->overview ?>
-            </li>
-        </ul>
-        <p><i>
-                <?= $il_signore_degli_anelli->goodVision() ?><i></p>
-        <ul>
-            <li>
-                <?= $harry_potter->title ?>
-            </li>
-            <li>
-                <?= $harry_potter->getFullGenre() ?>
-            </li>
-            <li>
-                <?= $harry_potter->language ?>
-            </li>
-            <li>
-                <?= $harry_potter->overview ?>
-            </li>
-        </ul>
-
-        <p><i>
-                <?= $harry_potter->goodVision() ?><i></p>
+        <?php foreach ($movie_objects as $movie): ?>
+            <ul>
+                <li>
+                    <?= $movie->title ?>
+                </li>
+                <li>
+                    <?= $movie->getFullGenre() ?>
+                </li>
+                <li>
+                    <?= $movie->language ?>
+                </li>
+                <li>
+                    <?= $movie->overview ?>
+                </li>
+            </ul>
+            <p><i>
+                    <?= $movie->goodVision() ?><i></p>
+        <?php endforeach; ?>
     </div>
 </body>
 
